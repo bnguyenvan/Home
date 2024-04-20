@@ -1,11 +1,11 @@
 Ubuntu Install
 
 ```bash
-bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/ct/ubuntu.sh)"
+bash -c "$(wget -qLO - https://github.com/bnguyenvan/HomeLab/main/lxc/ubuntu.sh)"
 ```
 
 Bookstack Install
 
 ```bash
-bash -c "$(wget -qLO - https://raw.githubusercontent.com/Gereshk/Scripts-homelab/main/bookstack/bookstack.sh)"
+bash -c "$(wget -qLO - https://raw.githubusercontent.com/bnguyenvan/HomeLab/main/bookstack/bookstack.sh)"
 ```
