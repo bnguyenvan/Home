@@ -30,7 +30,7 @@ catch_errors
 
 function default_settings() {
   CT_TYPE="0"
-  PW="root@ubuntu"
+  PW=""
   CT_ID=$NEXTID
   HN=$NSAPP
   DISK_SIZE="$var_disk"
@@ -41,13 +41,13 @@ function default_settings() {
   GATE=""
   APT_CACHER=""
   APT_CACHER_IP=""
-  DISABLEIP6="yes"
+  DISABLEIP6="no"
   MTU=""
   SD=""
   NS=""
   MAC=""
   VLAN=""
-  SSH="yes"
+  SSH="no"
   VERB="no"
   echo_default
 }
