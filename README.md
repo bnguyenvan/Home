@@ -63,7 +63,30 @@ scp -r ./data/images root@CONTAINER_IP_ADDR:/var/www/bookstack/public/uploads/
 
 # Enabling HTTPS for the BookStack web interface
 ### Create a let's Encrypt SSL certificate on proxmox server
+[Create let's encrypt certificate with Certbot](https://books.ducloi.store/books/home-ebook/page/ssl-certificate-create-lets-encrypt-certificate-with-certbot)
+
 ### Mount certificate from proxmox server to container
+On bookstack container:
+```bash
+mkdir -r /etc/letsencrypt/live/YOUR-DOMAIN-HERE
+mkdir -r /etc/letsencrypt/archive/YOUR-DOMAIN-HERE
+```
+On Proxmox:
+```bash
+vim /etc/pve/lxc/YOUR_LXC_ID.conf
+```
+Added bellow line at the end of file
+```bash
+mp0: /etc/letsencrypt/archive/YOUR-DOMAIN-HERE,mp=/etc/letsencrypt/archive/YOUR-DOMAIN-HERE
+```
+Now go back to bookstack container:
+```bash
+ln -s ../../archive/YOUR-DOMAIN-HERE/fullchain2.pem fullchain.pem
+ln -s ../../archive/YOUR-DOMAIN-HERE/privkey2.pem privkey.pem
+```
+* `fullchain2.pem`: fullchain file mounted from `/etc/letsencrypt/archive/YOUR-DOMAIN-HERE/fullchain2.pem` on proxmox server
+* `privkey2.pem`: private key file mounted from `/etc/letsencrypt/archive/YOUR-DOMAIN-HERE/privkey2.pem` on proxmox server
+
 ### Modify apache config to using https
 Move the original BootStack config file (so you can access it again if needed)
 ```bash
