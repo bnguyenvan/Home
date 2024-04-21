@@ -62,6 +62,9 @@ scp -r ./data/images root@CONTAINER_IP_ADDR:/var/www/bookstack/public/uploads/
 ```
 
 # Enabling HTTPS for the BookStack web interface
+### Create a let's Encrypt SSL certificate on proxmox server
+### Mount certificate from proxmox server to container
+### Modify apache config to using https
 Move the original BootStack config file (so you can access it again if needed)
 ```bash
 sudo mv /etc/apache2/sites-available/bookstack.conf /etc/apache2/sites-available/bookstack.conf.old
@@ -142,5 +145,9 @@ Change the APP_URL parameter so that it uses the full domain name, making sure t
 # to update stored URLs in the database. Command example:
 # php artisan bookstack:update-url https://old.example.com https://new.example.com
 APP_URL=https://YOUR-DOMAIN-HERE
+```
+Restart Apache2
+```bash
+sudo systemctl restart apache2
 ```
 Ref: [enabling-https-for-the-bookstack-web-interface](https://docs.sam.gy/books/bookstack/page/enabling-https-for-the-bookstack-web-interface)
