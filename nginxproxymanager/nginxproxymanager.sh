@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/bnguyenvan/HomeLab/main/misc/build.func)
+source <(curl -s https://raw.githubusercontent.com/tteck/Proxmox/main/misc/build.func)
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
 # License: MIT
@@ -37,7 +37,7 @@ function default_settings() {
   DISK_SIZE="$var_disk"
   CORE_COUNT="$var_cpu"
   RAM_SIZE="$var_ram"
-  BRG="vmbr1"
+  BRG="vmbr0"
   NET="dhcp"
   GATE=""
   APT_CACHER=""
@@ -48,7 +48,7 @@ function default_settings() {
   NS=""
   MAC=""
   VLAN=""
-  SSH="yes"
+  SSH="no"
   VERB="no"
   echo_default
 }
@@ -134,8 +134,6 @@ function update_script() {
   cp -r backend/* /app
   cp -r global/* /app/global
   python3 -m pip install --no-cache-dir certbot-dns-godaddy==2.6.0 &>/dev/null
-  python3 -m pip install --no-cache-dir certbot==2.6.0 &>/dev/null
-  python3 -m pip install --no-cache-dir acme==2.6.0 &>/dev/null
   msg_ok "Setup Enviroment"
 
   msg_info "Building Frontend"
