@@ -303,7 +303,7 @@ advanced_settings() {
 
   if BRG=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a Bridge" 8 58 vmbr0 --title "BRIDGE" 3>&1 1>&2 2>&3); then
     if [ -z "$BRG" ]; then
-      BRG="vmbr0"
+      BRG="vmbr1"
       echo -e "${DGN}Using Bridge: ${BGN}$BRG${CL}"
     else
       echo -e "${DGN}Using Bridge: ${BGN}$BRG${CL}"
