@@ -2,23 +2,45 @@ NGINX PROXY MANAGER
 ---
 
 # Install Nginx Proxy Manager
-Run bellow script to install Nginx Proxy Manager
+Run bellow script to install Nginx Proxy Manager from proxmox shell
 ```bash
 bash -c "$(wget -qLO - https://github.com/bnguyenvan/HomeLab/raw/main/nginxproxymanager/nginxproxymanager.sh)"
 ```
-This will create nginx proxy manager container:
-* os: ubuntu 22.04
-* cpu: 1
-* ram: 1G
-* pre-install: certbot==2.6.0,certbot-dns-godaddy==2.6.0,acme==2.6.0.
-Note: 
-* At the time of this installation, latest certbot version is 2.10, the script will install acme==2.10 and install certbot-dns-godaddy==2.10 but certbot-dns-godaddy latest version is 2.8
-* If we install certbot and acme version to 2.8, we will get error:
-```
+Choose Advance during installation.
+
+# Install certbot
+We have to re-install with version 2.6
+```bash
+pip install certbot-dns-godaddy==2.6.0
+pip install certbot==2.6.0
+pip install acme==2.6.0
 ```
 
-Default Account
+Default Account login to web interface
 ```bash
 Email:    admin@example.com
 Password: changeme
 ```
+
+# Create new Let's Encrypt Certificate
+Nginx Proxy Manager > SSL Certificates > Add SSL Certificate > Let's Encrypt
+* Domain Names: books.ducloi.store
+* Email Address for Let's Encrypt: microwave88@gmail.com
+* Use a DNS Challenge: enable
+* DNS Provider: GoDaddy
+* Credentials File Content:
+  * dns_godaddy_secret = Your_GoDaddy_Key
+  * dns_godaddy_key = Your_GoDaddy_Secret
+
+# Add new Host
+Nginx Proxy Manager > Hosts > Proxy Hosts
+* Details:
+  * Domain Names: books.ducloi.store
+  * Scheme: http
+  * Forward Hostname / IP: 192.168.31.200
+  * Forward Port: 80
+  * Websockets Support: Enable
+* SSL:
+  * SSL Certificate: books.ducloi.store
+  * Force SSL: enable
+  * HTTP/2 Support: enable

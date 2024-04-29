@@ -62,6 +62,9 @@ scp -r ./data/images root@CONTAINER_IP_ADDR:/var/www/bookstack/public/uploads/
 ```
 
 # Enabling HTTPS for the BookStack web interface
+
+## Method 1 - Enable https directly on bookstack
+STEP 1:
 ### Create a let's Encrypt SSL certificate on proxmox server
 [Create let's encrypt certificate with Certbot](https://books.ducloi.store/books/home-ebook/page/ssl-certificate-create-lets-encrypt-certificate-with-certbot)
 
@@ -158,6 +161,10 @@ Edit BookStack's .env config file:
 sudo nano /var/www/bookstack/.env
 ```
 
+## Method 2 - Using Nginx Proxy Manager
+Following step [here](https://github.com/bnguyenvan/HomeLab/tree/main/nginxproxymanager)
+
+STEP 2:
 Change the APP_URL parameter so that it uses the full domain name, making sure that it specifies https:// not http://
 ```bash
 # Application URL
