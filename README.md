@@ -62,13 +62,13 @@ scp -r ./data/images root@CONTAINER_IP_ADDR:/var/www/bookstack/public/uploads/
 ```
 
 # Enabling HTTPS for the BookStack web interface
+## STEP 1:
+### Method 1 - Enable https directly on bookstack
 
-## Method 1 - Enable https directly on bookstack
-STEP 1:
-### Create a let's Encrypt SSL certificate on proxmox server
+__Create a let's Encrypt SSL certificate on proxmox server__
 [Create let's encrypt certificate with Certbot](https://books.ducloi.store/books/home-ebook/page/ssl-certificate-create-lets-encrypt-certificate-with-certbot)
 
-### Mount certificate from proxmox server to container
+__Mount certificate from proxmox server to container__
 On bookstack container:
 ```bash
 mkdir -r /etc/letsencrypt/live/YOUR-DOMAIN-HERE
@@ -90,7 +90,7 @@ ln -s ../../archive/YOUR-DOMAIN-HERE/privkey2.pem privkey.pem
 * `fullchain2.pem`: fullchain file mounted from `/etc/letsencrypt/archive/YOUR-DOMAIN-HERE/fullchain2.pem` on proxmox server
 * `privkey2.pem`: private key file mounted from `/etc/letsencrypt/archive/YOUR-DOMAIN-HERE/privkey2.pem` on proxmox server
 
-### Modify apache config to using https
+__Modify apache config to using https__
 Move the original BootStack config file (so you can access it again if needed)
 ```bash
 sudo mv /etc/apache2/sites-available/bookstack.conf /etc/apache2/sites-available/bookstack.conf.old
@@ -161,10 +161,10 @@ Edit BookStack's .env config file:
 sudo nano /var/www/bookstack/.env
 ```
 
-## Method 2 - Using Nginx Proxy Manager
+### Method 2 - Using Nginx Proxy Manager
 Following step [here](https://github.com/bnguyenvan/HomeLab/tree/main/nginxproxymanager)
 
-STEP 2:
+## STEP 2:
 Change the APP_URL parameter so that it uses the full domain name, making sure that it specifies https:// not http://
 ```bash
 # Application URL
