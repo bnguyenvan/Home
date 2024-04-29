@@ -141,7 +141,7 @@ echo_default() {
   echo -e "${DGN}Using Disk Size: ${BGN}$var_disk${CL}${DGN}GB${CL}"
   echo -e "${DGN}Allocated Cores ${BGN}$var_cpu${CL}"
   echo -e "${DGN}Allocated Ram ${BGN}$var_ram${CL}"
-  echo -e "${DGN}Using Bridge: ${BGN}vmbr0${CL}"
+  echo -e "${DGN}Using Bridge: ${BGN}vmbr1${CL}"
   echo -e "${DGN}Using Static IP Address: ${BGN}dhcp${CL}"
   echo -e "${DGN}Using Gateway IP Address: ${BGN}Default${CL}"
   echo -e "${DGN}Using Apt-Cacher IP Address: ${BGN}Default${CL}"
@@ -301,7 +301,7 @@ advanced_settings() {
     exit-script
   fi
 
-  if BRG=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a Bridge" 8 58 vmbr0 --title "BRIDGE" 3>&1 1>&2 2>&3); then
+  if BRG=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a Bridge" 8 58 vmbr1 --title "BRIDGE" 3>&1 1>&2 2>&3); then
     if [ -z "$BRG" ]; then
       BRG="vmbr1"
       echo -e "${DGN}Using Bridge: ${BGN}$BRG${CL}"
