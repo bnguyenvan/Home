@@ -1,11 +1,11 @@
 NGINX PROXY MANAGER
 ---
-# Create a LXC container
 
 # Install Nginx Proxy Manager
-Run bellow script to install Nginx Proxy Manager inside previous created container
+Run bellow script to install Nginx Proxy Manager
 ```bash
-sh -c "$(wget --no-cache -qO- https://raw.githubusercontent.com/ej52/proxmox/main/install.sh)" -s --app nginx-proxy-manager
+bash -c "$(wget -qLO - https://github.com/bnguyenvan/HomeLab/raw/main/nginxproxymanager/nginxproxymanager.sh)"
+
 ```
 
 Default Account
