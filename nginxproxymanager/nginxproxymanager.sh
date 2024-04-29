@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source <(curl -s https://raw.githubusercontent.com/bnguyenvan/HomeLab/main/misc/build.func)
+
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
 # License: MIT
@@ -23,9 +24,8 @@ APP="Nginx Proxy Manager"
 var_disk="4"
 var_cpu="1"
 var_ram="1024"
-var_os="ubuntu"
-var_version="22.04"
-var_bridge="vmbr1"
+var_os="debian"
+var_version="12"
 variables
 color
 catch_errors
@@ -38,7 +38,7 @@ function default_settings() {
   DISK_SIZE="$var_disk"
   CORE_COUNT="$var_cpu"
   RAM_SIZE="$var_ram"
-  BRG="$var_bridge"
+  BRG="vmbr0"
   NET="dhcp"
   GATE=""
   APT_CACHER=""
@@ -134,7 +134,7 @@ function update_script() {
   mkdir -p /app/global /app/frontend/images
   cp -r backend/* /app
   cp -r global/* /app/global
-  python3 -m pip install --no-cache-dir certbot-dns-godaddy &>/dev/null
+  python3 -m pip install --no-cache-dir certbot-dns-cloudflare &>/dev/null
   msg_ok "Setup Enviroment"
 
   msg_info "Building Frontend"
