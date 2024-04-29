@@ -6,7 +6,12 @@ Run bellow script to install Nginx Proxy Manager from proxmox shell
 ```bash
 bash -c "$(wget -qLO - https://github.com/bnguyenvan/HomeLab/raw/main/nginxproxymanager/nginxproxymanager.sh)"
 ```
-Choose Advance during installation.
+Choose Advanced during installation.
+* debian 12
+* Unprivileged
+* Set a Bridge: vmbr1
+* Enable Root SSH Access: Yes
+* Enable Verbose Mode: No
 
 # Install certbot
 We have to re-install with version 2.6
