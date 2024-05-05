@@ -7,7 +7,7 @@ Let’s say that you have a security camera that sends recordings to an external
 ## How does it work?
 
 Instead of you providing an external IP address to third party, you will provide a host name that points to it – this is called Dynamic DNS. On your OPNSense, you would run a plugin that periodically checks for what external IP address is assigned on your WAN interface. If it changes it, it will modify where does the hostname lead to. This way, the outage would be short (e.g. a minute) instead of hours or days before you would manually modify the new IP with the existing service provider.
-<img src=https://imgur.com/hjzuXhV>
+<img src=https://i.imgur.com/hjzuXhV.png>
 
 ## How to set up DynDNS?
 
@@ -18,7 +18,7 @@ OPNSense supports a wide variety of DynDNS providers. In this guide, we will cov
 
    3. Create a free DuckDNS sub-domain to use for your services instead of your ever-changing external IP address
 Install the dynamic DNS plugin in OPNSense. ‘System’ -> ‘Firmware’ -> ‘Plugins’ and locate he ‘os-ddclient’ (previously before 23.7, the plugin was called ‘os-dynds’ but was deprecated despite being pretty good). When you find it in the list, click on the + sign to install it:
-<img src=https://imgur.com/a2MiA2g>
+<img src=https://i.imgur.com/a2MiA2g.png>
 
    4. On your OPNSense web GUI, go to ‘Services’ -> ‘Dynamic DNS’ -> ‘Settings’ and click on the ‘Add’ button.
    - Service: ‘duckdns’
