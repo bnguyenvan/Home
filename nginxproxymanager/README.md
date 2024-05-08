@@ -64,8 +64,8 @@ Nginx Proxy Manager > Hosts > Proxy Hosts
 
 ## Trouble Shooting
 ### Case 1: Could not login to Nginx Proxy Manager although login page appear
-    Reason: some Host with certificate invalid, when reboot Nginx Proxy Manager, service could not start due to error.
-    Solution: Check log at ```/var/log/nginx/error.log```. Or you could remove all proxy_host at ```cd /data/nginx/proxy_host/``` and try to restart nginx again:
-    ```bash
-    root@NginxProxyManager:/var/log/nginx# systemctl status npm
-    ```
+Reason: some Host with certificate invalid, when reboot Nginx Proxy Manager, service could not start due to error.
+Solution: Check log at ```/var/log/nginx/error.log```. Or you could remove all proxy_host at ```cd /data/nginx/proxy_host/``` and try to restart nginx again:
+```bash
+root@NginxProxyManager:/var/log/nginx# systemctl status npm
+```
