@@ -9,4 +9,5 @@ Proxmox
   - 2 USB 2.0, 2 USB 3.0
   - DC 12V
 -------------
+[I. Install Proxmox]
 
