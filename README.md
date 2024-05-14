@@ -11,4 +11,4 @@
 
 [Proxmox Guide](https://github.com/bnguyenvan/HomeLab/blob/main/proxmox/proxmox.md)
 
-[Network]([Proxmox Guide](https://github.com/bnguyenvan/HomeLab/blob/main/network/network.md)
+[Network](https://github.com/bnguyenvan/HomeLab/blob/main/network/network.md)
