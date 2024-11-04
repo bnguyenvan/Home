@@ -19,3 +19,9 @@ then add bellow line:
 mp0: /source/to/folder,mp=/container/folder
 ```
 It is easiser to set container as Privileged during settup
+
+# Reset password of LXC
+Login to shell of Proxmox and enter bellow commands
+```bash
+# pct enter <CTID>
+```
