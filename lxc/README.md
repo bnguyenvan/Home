@@ -23,11 +23,12 @@ It is easiser to set container as Privileged during settup
 # Reset password of LXC
 Login to shell of Proxmox and enter bellow commands
 ```bash
-pct enter <CTID>
+root@pve:~# pct enter <CTID>
 ```
 Ex: If bookstack lxc has id 8004, then type:
 ```bash
-pct enter 8004
+root@pve:~# pct enter 8004
+root@bookstack:~#
 ```
 After this, you has been inside container, then just need to change password by type
 ```bash
