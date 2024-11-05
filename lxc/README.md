@@ -19,3 +19,20 @@ then add bellow line:
 mp0: /source/to/folder,mp=/container/folder
 ```
 It is easiser to set container as Privileged during settup
+
+# Reset password of LXC
+Login to shell of Proxmox and enter bellow commands
+```bash
+root@pve:~# pct enter <CTID>
+```
+Ex: If bookstack lxc has id 8004, then type:
+```bash
+root@pve:~# pct enter 8004
+root@bookstack:~#
+```
+After this, you has been inside container, then just need to change password by type
+```bash
+root@bookstack:~# passwd
+New password: 
+Retype new password: 
+```
