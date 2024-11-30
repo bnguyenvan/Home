@@ -44,3 +44,8 @@ PowerOnState 1 => ON = turn relay(s) ON after power up
 ```
 The PowerOnState device configuration parameter is applied when the device is initially powered up. It does not apply to device warm restarts.
 Further information could be found here: https://tasmota.github.io/docs/PowerOnState
+
+Set time zone:
+```
+Timezone +7:00
+```
