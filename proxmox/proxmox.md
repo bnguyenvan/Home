@@ -9,11 +9,10 @@ Proxmox
   - 2 USB 2.0, 2 USB 3.0
   - DC 12V
 -------------
-[I. Install Proxmox]
 
 ### Auto shutdown Proxmox when lost Internet
-Create a script allow system shutdown in the case of lost internet. This case happen when lost electric and UPS could not stand for over 15 minutes, then system will shutdown shutdently cause damaged hardware.
-The script will run as a system service on boot.
+*Create a script allow system shutdown in the case of lost internet. This case happen when lost electric and UPS could not stand for over 15 minutes, then system will shutdown shutdently cause damaged hardware.
+The script will run as a system service on boot.*
 
 #### Step 1 - Create a script 
 ```bash
