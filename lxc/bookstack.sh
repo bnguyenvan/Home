@@ -161,7 +161,7 @@ function run_set_application_file_permissions() {
 function run_configure_apache() {
   # Enable required apache modules
   a2enmod rewrite
-  a2enmod php8.1
+  a2enmod php8.3
 
   # Set-up the required BookStack apache config
   cat >/etc/apache2/sites-available/bookstack.conf <<EOL
